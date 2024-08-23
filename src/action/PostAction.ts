@@ -7,7 +7,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 export async function getPostById(id: string) {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  // await new Promise((resolve) => setTimeout(resolve, 1000)); // artificial delay
 
   const postId = await prisma.post.findMany({
     where: {
@@ -53,7 +53,7 @@ export async function getPosts() {
 }
 
 export async function createPost(data: PostFormProps) {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  // await new Promise((resolve) => setTimeout(resolve, 1000)); // artificial delay
 
   try {
     const validatedData = postSchema.parse(data);
@@ -76,7 +76,7 @@ export async function createPost(data: PostFormProps) {
 }
 
 export async function updatePost(id: string, data: PostFormProps) {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  // await new Promise((resolve) => setTimeout(resolve, 1000)); // artificial delay
 
   try {
     const validatedData = postSchema.parse(data);
@@ -102,7 +102,7 @@ export async function updatePost(id: string, data: PostFormProps) {
 }
 
 export async function deletePost(id: string) {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  // await new Promise((resolve) => setTimeout(resolve, 1000)); // artificial delay
 
   await prisma.post.delete({
     where: {
