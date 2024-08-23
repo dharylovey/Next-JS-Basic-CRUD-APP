@@ -63,7 +63,7 @@ export default function EditForm({ id, initialData }: UpdateFormProps) {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader className="text-lg font-medium">
-          Create a New Post
+          Update a Post
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
