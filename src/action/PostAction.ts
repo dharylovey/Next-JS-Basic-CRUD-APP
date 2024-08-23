@@ -2,7 +2,6 @@
 
 import prisma from "@/lib/prisma";
 import { PostFormProps, postSchema } from "@/zodSchema/postSchema";
-import { Post } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
