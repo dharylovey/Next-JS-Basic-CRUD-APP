@@ -45,10 +45,17 @@ export default function EditForm({ id, initialData }: UpdateFormProps) {
   } = form;
 
   const onSubmit = async (data: PostFormProps) => {
+    const validatedData = postSchema.parse(data);
+    if (!validatedData) {
+      return toast.error("All fields are required");
+    }
     try {
-      await updatePost(id, data);
-      toast.success("Post updated successfully");
-      router.push("/");
+      const post = await updatePost(id, data);
+      if (post) {
+        toast.success("Post updated successfully");
+        form.reset();
+        setOpen(false);
+      }
     } catch (error) {
       toast.error("Failed to update post");
     }
