@@ -4,7 +4,6 @@ import React, { useState, useMemo } from "react";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -37,7 +36,7 @@ export default function TableList({ posts }: { posts: Post[] }) {
   return (
     <div className="w-full flex flex-col relative h-[75vh]">
       <div className="flex-grow overflow-auto">
-        <Table>
+        <Table className="min-w-[600px]">
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px]">Date Created</TableHead>
