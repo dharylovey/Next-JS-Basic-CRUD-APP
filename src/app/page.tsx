@@ -1,21 +1,9 @@
+import { getPosts } from "@/action/PostAction";
 import PostForm from "@/components/PostForm";
 import TableList from "@/components/TableList";
-import prisma from "@/lib/prisma";
 
 export default async function Home() {
-  const posts = await prisma.post.findMany({
-    orderBy: {
-      createdAt: "desc",
-    },
-    select: {
-      id: true,
-      title: true,
-      content: true,
-      published: true,
-      createdAt: true,
-      updatedAt: true,
-    },
-  });
+  const posts = await getPosts();
 
   return (
     <main className="flex flex-col max-w-7xl mx-auto p-10 justify-center items-center space-y-10">
