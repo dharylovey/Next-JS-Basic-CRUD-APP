@@ -64,8 +64,8 @@ export default function EditForm({ id, initialData }: UpdateFormProps) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" size="icon">
-          <FaRegEdit />
+        <Button variant="outline" size="sm">
+          <FaRegEdit size={10}/>
         </Button>
       </DialogTrigger>
       <DialogContent>

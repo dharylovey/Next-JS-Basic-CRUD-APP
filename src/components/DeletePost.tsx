@@ -38,8 +38,8 @@ export default function DeleteButton({ id }: DeleteButtonProps) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" size="icon" className="bg-red-500 text-white">
-          <FaRegTrashCan />
+        <Button variant="outline" size="sm" className="bg-red-500 text-white">
+          <FaRegTrashCan size={10} />
         </Button>
       </DialogTrigger>
       <DialogContent>

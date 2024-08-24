@@ -47,7 +47,7 @@ export default function TableList({ posts }: { posts: Post[] }) {
               <TableCell className="text-right">
                 {
                   <div className="flex space-x-2 items-center justify-around">
-                    <Suspense fallback={<ClipLoader size={40} />}>
+                    <Suspense fallback={<ClipLoader size={20} />}>
                       <EditForm
                         id={post.id}
                         initialData={{
@@ -56,7 +56,7 @@ export default function TableList({ posts }: { posts: Post[] }) {
                         }}
                       />
                     </Suspense>
-                    <Suspense fallback={<ClipLoader size={40} />}>
+                    <Suspense fallback={<ClipLoader size={20} />}>
                       <DeleteButton id={post.id} key={post.id} />
                     </Suspense>
                   </div>
